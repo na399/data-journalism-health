@@ -1,7 +1,9 @@
+<i18n src="~/assets/messages.json"></i18n>
+
 <template>
   <div class="container">
     <full-page ref="fullpage" :options="options" id="fullpage">
-      <div class="section"><TitlePage /></div>
+      <div class="section"><TitlePage :titleString="$t('title')" /></div>
       <div class="section">つづく</div>
     </full-page>
   </div>
@@ -18,7 +20,7 @@ export default {
     return {
       options: {
         licenseKey: 'IN_REQUEST',
-        anchors: ['home', 'page1'],
+        anchors: ['home', 'tbc'],
         verticalCentered: true,
         controlArrows: true,
         scrollBar: true,
