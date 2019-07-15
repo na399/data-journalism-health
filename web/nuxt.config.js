@@ -1,43 +1,55 @@
-
 export default {
   mode: 'spa',
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#fff' },
   /*
-  ** Global CSS
-  */
-  css: [
-    '~/assets/css/tailwind.css'
-  ],
+   ** Global CSS
+   */
+  css: ['~/assets/css/tailwind.css'],
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: [{ src: '~/plugins/fullpage', ssr: false }],
   /*
-  ** Nuxt.js modules
-  */
-  modules: [
-  ],
+   ** Nuxt.js modules
+   */
+  modules: ['nuxt-fullpage.js', 'nuxt-i18n'],
+  i18n: {
+    locales: [
+      {
+        code: 'th',
+        iso: 'th_TH'
+      },
+      {
+        code: 'en',
+        iso: 'en_GB'
+      }
+    ],
+    defaultLocale: 'th',
+    detectBrowserLanguage: false,
+    vueI18nLoader: true
+  },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     postcss: {
       plugins: {
@@ -45,9 +57,14 @@ export default {
       }
     },
     /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
+     ** You can extend webpack config here
+     */
+    extend(config) {
+      config.module.rules.push({
+        resourceQuery: /blockType=i18n/,
+        type: 'javascript/auto',
+        loader: ['@kazupon/vue-i18n-loader']
+      })
     }
   }
 }
