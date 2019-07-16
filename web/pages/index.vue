@@ -2,7 +2,7 @@
 
 <template>
   <div class="container">
-    <full-page ref="fullpage" :options="options" id="fullpage">
+    <full-page ref="fullpage" :options="fullPageOptions" id="fullpage">
       <div class="section">
         <TitlePage :titleContent="$t('title')" />
       </div>
@@ -13,10 +13,14 @@
         <ContentPage />
       </div>
       <div class="section">
-        <QuestionPage answerPage="#section-1-3" />
+        <QuestionPage idQ="q1" answerPage="#section-1-3" />
       </div>
       <div class="section">
-        <ContentPage :boxSizes="[1, 3]" :isAnswerHidden="true" prevQid="#section-1-2" />
+        <ContentPage
+          :boxSizes="[1, 3]"
+          :isAnswerHidden="!recordedAnswers.hasOwnProperty('q1')"
+          prevQid="#section-1-2"
+        />
       </div>
       <div class="section">
         <SectionPage
@@ -37,6 +41,8 @@ import SectionPage from '~/components/SectionPage.vue'
 import ContentPage from '~/components/ContentPage.vue'
 import QuestionPage from '~/components/QuestionPage.vue'
 
+import { mapState } from 'vuex'
+
 export default {
   components: {
     TitlePage,
@@ -46,7 +52,8 @@ export default {
   },
   data() {
     return {
-      options: {
+      recordedAnswers: {},
+      fullPageOptions: {
         licenseKey: 'IN_REQUEST',
         anchors: [
           'home',
@@ -64,6 +71,15 @@ export default {
         paddingBottom: '0px'
       }
     }
+  },
+  mounted() {
+    this.$store.subscribe((mutation, state) => {
+      switch (mutation.type) {
+        case 'localStorage/recordAnswer':
+          this.recordedAnswers = state.localStorage.recordedAnswers
+          break
+      }
+    })
   }
 }
 </script>

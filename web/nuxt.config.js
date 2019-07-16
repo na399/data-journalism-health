@@ -34,7 +34,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-fullpage.js', 'nuxt-i18n'],
+  modules: ['nuxt-fullpage.js', 'nuxt-i18n', 'nuxt-vuex-localstorage'],
   i18n: {
     locales: [
       {

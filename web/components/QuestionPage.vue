@@ -2,16 +2,16 @@
 
 <template>
   <div class="page">
-    <canvas id="confetti" :class="{ 'active': isAnswerCorrect }" />
+    <canvas id="confetti" :class="{ 'active': !!answerClicked }" />
     <div class="top-box" :style="{'flex-grow': boxSizes[0]}" v-html="question"></div>
     <div class="bottom-box" :style="{'flex-grow': boxSizes[1]}">
-      <div v-for="choice in answerChoices" :key="choice.id" @click="checkAnswer(choice)">
+      <div v-for="choice in answerChoices" :key="choice.idAns" @click="checkAnswer(choice)">
         <button
           :class="[
             'btn',
             'btn-choice',
             { 'btn-correct': choice.correct && answerClicked },
-            { 'btn-incorrect': !choice.correct && answerClicked == choice.id },
+            { 'btn-incorrect': !choice.correct && answerClicked == choice.idAns },
             { 'cursor-not-allowed': !!answerClicked }
           ]"
         >{{ choice.text }}</button>
@@ -27,6 +27,10 @@ export default {
       type: Array,
       default: () => [2, 1]
     },
+    idQ: {
+      type: String,
+      default: 'q1'
+    },
     question: {
       type: String,
       default: '<span>(question)</span>'
@@ -35,17 +39,17 @@ export default {
       type: Array,
       default: () => [
         {
-          id: 1,
+          idAns: 1,
           text: '(ans 1)',
           correct: true
         },
         {
-          id: 2,
+          idAns: 2,
           text: '(ans 2)',
           correct: false
         },
         {
-          id: 3,
+          idAns: 3,
           text: '(ans 3)',
           correct: false
         }
@@ -64,7 +68,7 @@ export default {
   },
   methods: {
     checkAnswer(choice) {
-      this.answerClicked = choice.id
+      this.answerClicked = choice.idAns
       this.isAnswerCorrect = choice.correct
 
       if (this.isAnswerCorrect) {
@@ -85,7 +89,10 @@ export default {
         }, 1500)
       }
 
-      // TODO: save answer in store
+      this.$store.commit('localStorage/recordAnswer', {
+        idQ: this.$props.idQ,
+        idAns: this.answerClicked
+      })
 
       setTimeout(() => {
         window.location.href = this.$props.answerPage
