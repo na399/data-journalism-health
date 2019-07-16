@@ -54,7 +54,7 @@ export default {
     return {
       recordedAnswers: {},
       fullPageOptions: {
-        licenseKey: 'IN_REQUEST',
+        licenseKey: 'wobwH@p8',
         anchors: [
           'home',
           'section-1-0',
