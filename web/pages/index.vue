@@ -86,6 +86,6 @@ export default {
 
 <style>
 .container {
-  @apply min-w-full min-h-screen flex justify-center items-center text-center mx-auto;
+  @apply min-w-full min-h-screen flex justify-center items-center text-center mx-auto bg-purple-400;
 }
 </style>
