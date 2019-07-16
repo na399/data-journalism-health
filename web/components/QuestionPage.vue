@@ -2,6 +2,7 @@
 
 <template>
   <div class="page">
+    <canvas id="confetti" :class="{ 'active': isAnswerCorrect }" />
     <div class="top-box" :style="{'flex-grow': boxSizes[0]}" v-html="question"></div>
     <div class="bottom-box" :style="{'flex-grow': boxSizes[1]}">
       <div v-for="choice in answerChoices" :key="choice.id" @click="checkAnswer(choice)">
@@ -66,13 +67,29 @@ export default {
       this.answerClicked = choice.id
       this.isAnswerCorrect = choice.correct
 
-      // TODO: add confetti when answered correctly
+      if (this.isAnswerCorrect) {
+        this.$confetti.start({
+          canvasId: 'confetti',
+          particlesPerFrame: 1.5,
+          defaultSize: 5,
+          defaultDropRate: 5,
+          particles: [
+            {
+              type: 'rect',
+              colors: ['#F6E05E', '#F687B3', '#68D391']
+            }
+          ]
+        })
+        setTimeout(() => {
+          this.$confetti.stop()
+        }, 1500)
+      }
 
       // TODO: save answer in store
 
       setTimeout(() => {
         window.location.href = this.$props.answerPage
-      }, 2500)
+      }, 3000)
     }
   }
 }
@@ -83,7 +100,7 @@ export default {
   @apply w-full h-full py-8 bg-purple-400 flex flex-col items-center justify-center;
 }
 
-.page * {
+.page div {
   @apply flex flex-col items-center justify-center;
 }
 
@@ -99,13 +116,16 @@ export default {
   @apply w-full flex-grow;
 }
 
-.overlay {
-  @apply w-full h-full absolute;
-  background-color: hsla(0, 0%, 100%, 0.7);
+#confetti {
+  @apply w-full h-full absolute z-0;
+}
+
+#confetti.active {
+  @apply z-20;
 }
 
 .btn {
-  @apply font-bold py-2 px-4 m-2 rounded-lg;
+  @apply font-bold py-2 px-4 m-2 rounded-lg z-10;
 }
 .btn-choice {
   @apply bg-gray-100 font-bold py-2 px-4 border border-b-4 border-gray-400;
@@ -115,10 +135,10 @@ export default {
 }
 .btn-correct {
   @apply bg-teal-400 border-teal-700 !important;
-  transition: all .8s;
+  transition: all 0.8s;
 }
 .btn-incorrect {
   @apply bg-pink-400 border-pink-700 !important;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 </style>

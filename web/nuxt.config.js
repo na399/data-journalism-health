@@ -27,7 +27,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/fullpage', ssr: false }],
+  plugins: [
+    { src: '~/plugins/fullpage', mode: 'client' },
+    { src: '~/plugins/confetti', mode: 'client' }
+  ],
   /*
    ** Nuxt.js modules
    */
