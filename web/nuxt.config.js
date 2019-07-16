@@ -35,6 +35,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/pwa',
     'nuxt-fullpage.js',
     'nuxt-i18n',
     'nuxt-vuex-localstorage',
