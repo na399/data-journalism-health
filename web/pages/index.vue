@@ -13,7 +13,10 @@
         <ContentPage />
       </div>
       <div class="section">
-        <ContentPage :boxSizes="[1, 3]" :isHidingAnswer="true" prevQid="#section-1-1" />
+        <QuestionPage answerPage="#section-1-3" />
+      </div>
+      <div class="section">
+        <ContentPage :boxSizes="[1, 3]" :isAnswerHidden="true" prevQid="#section-1-2" />
       </div>
       <div class="section">
         <SectionPage
@@ -32,12 +35,14 @@
 import TitlePage from '~/components/TitlePage.vue'
 import SectionPage from '~/components/SectionPage.vue'
 import ContentPage from '~/components/ContentPage.vue'
+import QuestionPage from '~/components/QuestionPage.vue'
 
 export default {
   components: {
     TitlePage,
     SectionPage,
-    ContentPage
+    ContentPage,
+    QuestionPage
   },
   data() {
     return {
@@ -48,6 +53,7 @@ export default {
           'section-1-0',
           'section-1-1',
           'section-1-2',
+          'section-1-3',
           'section-2-0',
           'tbc'
         ],

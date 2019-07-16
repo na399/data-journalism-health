@@ -3,24 +3,26 @@
 <template>
   <div class="page">
     <div
-      :class="['top-box', {'blurred': isHidingAnswer}]"
+      :class="['top-box', {'blurred': isAnswerHidden}]"
       :style="{'flex-grow': boxSizes[0]}"
-      v-html="sectionContentTop"
+      v-html="contentTop"
     ></div>
     <div
-      :class="['bottom-box', {'blurred': isHidingAnswer}]"
+      :class="['bottom-box', {'blurred': isAnswerHidden}]"
       :style="{'flex-grow': boxSizes[1]}"
-      v-html="sectionContentBottom"
+      v-html="contentBottom"
     ></div>
-    <div class="overlay" v-if="isHidingAnswer">
-      <span>{{ $t('q-not-ans') }}</span>
-      <br />
-      <a :href="prevQid">
-        <button class="btn btn-teal">{{ $t('return-to-prev-q') }}</button>
-      </a>
-      <br />
-      <button class="btn btn-pink-text" @click="revealAns()">{{ $t('reveal-ans') }}</button>
-    </div>
+    <transition name="fade">
+      <div class="overlay" v-if="isAnswerHidden">
+        <span>{{ $t('q-not-ans') }}</span>
+        <br />
+        <a :href="prevQid">
+          <button class="btn btn-teal">{{ $t('return-to-prev-q') }}</button>
+        </a>
+        <br />
+        <button class="btn btn-pink-text" @click="revealAns()">{{ $t('reveal-ans') }}</button>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -31,15 +33,15 @@ export default {
       type: Array,
       default: () => [2, 1]
     },
-    sectionContentTop: {
+    contentTop: {
       type: String,
-      default: '<span>(sectionContentTop)</span>'
+      default: '<span>(contentTop)</span>'
     },
-    sectionContentBottom: {
+    contentBottom: {
       type: String,
-      default: '<span>(sectionContentBottom)</span>'
+      default: '<span>(contentBottom)</span>'
     },
-    isHidingAnswer: {
+    isAnswerHidden: {
       type: Boolean,
       default: false
     },
@@ -50,15 +52,15 @@ export default {
   },
   methods: {
     revealAns() {
-      this.$props.isHidingAnswer = false;
+      this.$props.isAnswerHidden = false
     }
-  },
+  }
 }
 </script>
 
 <style scoped>
 .page {
-  @apply w-full h-full bg-purple-400 flex flex-col items-center justify-center;
+  @apply w-full h-full py-8 bg-purple-400 flex flex-col items-center justify-center;
 }
 
 .page * {
@@ -77,6 +79,12 @@ export default {
 .overlay {
   @apply w-full h-full absolute;
   background-color: hsla(0, 0%, 100%, 0.7);
+}
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-leave-to {
+  opacity: 0;
 }
 
 .btn {

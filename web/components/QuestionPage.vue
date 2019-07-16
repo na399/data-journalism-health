@@ -1,0 +1,124 @@
+<i18n src="~/assets/messages.json"></i18n>
+
+<template>
+  <div class="page">
+    <div class="top-box" :style="{'flex-grow': boxSizes[0]}" v-html="question"></div>
+    <div class="bottom-box" :style="{'flex-grow': boxSizes[1]}">
+      <div v-for="choice in answerChoices" :key="choice.id" @click="checkAnswer(choice)">
+        <button
+          :class="[
+            'btn',
+            'btn-choice',
+            { 'btn-correct': choice.correct && answerClicked },
+            { 'btn-incorrect': !choice.correct && answerClicked == choice.id },
+            { 'cursor-not-allowed': !!answerClicked }
+          ]"
+        >{{ choice.text }}</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    boxSizes: {
+      type: Array,
+      default: () => [2, 1]
+    },
+    question: {
+      type: String,
+      default: '<span>(question)</span>'
+    },
+    answerChoices: {
+      type: Array,
+      default: () => [
+        {
+          id: 1,
+          text: '(ans 1)',
+          correct: true
+        },
+        {
+          id: 2,
+          text: '(ans 2)',
+          correct: false
+        },
+        {
+          id: 3,
+          text: '(ans 3)',
+          correct: false
+        }
+      ]
+    },
+    answerPage: {
+      type: String,
+      default: '#home'
+    }
+  },
+  data() {
+    return {
+      answerClicked: null,
+      isAnswerCorrect: null
+    }
+  },
+  methods: {
+    checkAnswer(choice) {
+      this.answerClicked = choice.id
+      this.isAnswerCorrect = choice.correct
+
+      // TODO: add confetti when answered correctly
+
+      // TODO: save answer in store
+
+      setTimeout(() => {
+        window.location.href = this.$props.answerPage
+      }, 2500)
+    }
+  }
+}
+</script>
+
+<style scoped>
+.page {
+  @apply w-full h-full py-8 bg-purple-400 flex flex-col items-center justify-center;
+}
+
+.page * {
+  @apply flex flex-col items-center justify-center;
+}
+
+.top-box {
+  @apply w-5/6 max-w-xl rounded-lg shadow-md m-5 p-10 bg-purple-100;
+}
+
+.bottom-box {
+  @apply w-5/6 max-w-xl m-5;
+}
+
+.bottom-box * {
+  @apply w-full flex-grow;
+}
+
+.overlay {
+  @apply w-full h-full absolute;
+  background-color: hsla(0, 0%, 100%, 0.7);
+}
+
+.btn {
+  @apply font-bold py-2 px-4 m-2 rounded-lg;
+}
+.btn-choice {
+  @apply bg-gray-100 font-bold py-2 px-4 border border-b-4 border-gray-400;
+}
+.btn-choice:hover {
+  @apply bg-gray-200 border-gray-500;
+}
+.btn-correct {
+  @apply bg-teal-400 border-teal-700 !important;
+  transition: all .8s;
+}
+.btn-incorrect {
+  @apply bg-pink-400 border-pink-700 !important;
+  transition: all .2s;
+}
+</style>
