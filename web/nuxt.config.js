@@ -38,8 +38,8 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-fullpage.js',
     'nuxt-i18n',
-    'nuxt-vuex-localstorage',
-    'nuxt-purgecss'
+    'nuxt-vuex-localstorage'
+    // 'nuxt-purgecss'
   ],
   i18n: {
     locales: [
@@ -56,9 +56,9 @@ export default {
     detectBrowserLanguage: false,
     vueI18nLoader: true
   },
-  purgeCSS: {
-    mode: 'postcss'
-  },
+  // purgeCSS: {
+  //   mode: 'postcss'
+  // },
   /*
    ** Build configuration
    */
