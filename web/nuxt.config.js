@@ -34,7 +34,12 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-fullpage.js', 'nuxt-i18n', 'nuxt-vuex-localstorage'],
+  modules: [
+    'nuxt-fullpage.js',
+    'nuxt-i18n',
+    'nuxt-vuex-localstorage',
+    'nuxt-purgecss'
+  ],
   i18n: {
     locales: [
       {
@@ -49,6 +54,9 @@ export default {
     defaultLocale: 'th',
     detectBrowserLanguage: false,
     vueI18nLoader: true
+  },
+  purgeCSS: {
+    mode: 'postcss'
   },
   /*
    ** Build configuration
