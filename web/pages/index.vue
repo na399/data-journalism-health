@@ -4,14 +4,20 @@
   <div class="container">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
-        <TitlePage :titleString="$t('title')" />
+        <TitlePage :titleContent="$t('title')" />
       </div>
       <div class="section">
-        <SectionPage :sectionString="$t('section-1')" />
+        <SectionPage :sectionContent="$t('section-1')" />
+      </div>
+      <div class="section">
+        <ContentPage />
+      </div>
+      <div class="section">
+        <ContentPage :boxSizes="[1, 3]" :isHidingAnswer="true" prevQid="#section-1-1" />
       </div>
       <div class="section">
         <SectionPage
-          :sectionString="$t('section-2')"
+          :sectionContent="$t('section-2')"
           :spacers="[1, 3]"
           :bgImg="require('~/assets/img/bg/online-marketing-hIgeoQjS_iE-unsplash.jpg')"
           bgPos="right center"
@@ -25,17 +31,26 @@
 <script>
 import TitlePage from '~/components/TitlePage.vue'
 import SectionPage from '~/components/SectionPage.vue'
+import ContentPage from '~/components/ContentPage.vue'
 
 export default {
   components: {
     TitlePage,
-    SectionPage
+    SectionPage,
+    ContentPage
   },
   data() {
     return {
       options: {
         licenseKey: 'IN_REQUEST',
-        anchors: ['home', 'section-1-0', 'section-2-0', 'tbc'],
+        anchors: [
+          'home',
+          'section-1-0',
+          'section-1-1',
+          'section-1-2',
+          'section-2-0',
+          'tbc'
+        ],
         verticalCentered: true,
         controlArrows: true,
         scrollBar: true,

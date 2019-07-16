@@ -1,7 +1,7 @@
 <template>
   <div class="page">
-    <div class="wordbox">
-      <h1 v-html="titleString"></h1>
+    <div class="wordcloud">
+      <h1 v-html="titleContent"></h1>
     </div>
     <div class="images">
       <img src="~/assets/img/old-lady.png" />
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    titleString: {
+    titleContent: {
       type: String,
       default: '(title)'
     },
@@ -26,7 +26,7 @@ export default {
   @apply w-full h-full bg-purple-600 flex flex-col items-center justify-center;
 }
 
-.wordbox {
+.wordcloud {
   @apply bg-gray-100 rounded-lg m-5 p-10 text-purple-700 text-2xl font-semibold;
 }
 

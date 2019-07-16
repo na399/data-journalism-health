@@ -3,7 +3,7 @@
     <div class="bg" :style="{'background-image': `url(${bgImg})`, 'background-position': bgPos}">
       <div :style="{'flex-grow': spacers[0]}"></div>
       <div class="wordbox">
-        <h2 v-html="sectionString"></h2>
+        <h2 v-html="sectionContent"></h2>
       </div>
       <div :style="{'flex-grow': spacers[1]}"></div>
     </div>
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    sectionString: {
+    sectionContent: {
       type: String,
       default: '(section)'
     },
