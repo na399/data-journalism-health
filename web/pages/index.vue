@@ -41,8 +41,6 @@ import SectionPage from '~/components/SectionPage.vue'
 import ContentPage from '~/components/ContentPage.vue'
 import QuestionPage from '~/components/QuestionPage.vue'
 
-import { mapState } from 'vuex'
-
 export default {
   components: {
     TitlePage,

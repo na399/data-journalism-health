@@ -1,6 +1,6 @@
 {
   "th": {
-    "title": "ฉันแค่ลืมเฉยๆ <br> หรือว่าป่วยกันแน่?",
+    "title": "แค่ลืมเฉยๆ <br> หรือว่าป่วยกันแน่?",
     "section-1": "สังคมประเทศไทย <br> เป็น <br> สังคมผู้สูงอายุ",
     "section-2": "สุขภาพผู้สูงอายุ",
     "q-not-ans": "ยังไม่ได้ตอบคำถามที่แล้วนะ",
@@ -8,6 +8,6 @@
     "reveal-ans": "ดูเฉลย"
   },
   "en": {
-    "title": "Am I just forgetful or sick actually?"
+    "title": "Am I just forgetful <br> or sick actually?"
   }
 }
