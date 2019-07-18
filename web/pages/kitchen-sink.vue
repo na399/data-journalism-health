@@ -1,32 +1,36 @@
+<i18n src="~/assets/messages.json"></i18n>
+
 <template>
   <div class="container">
     <full-page ref="fullpage" :options="fullPageOptions" id="fullpage">
-      <div class="section" v-for="page in spec.pages" :key="page.name">
-        <TitlePage v-if="page.type == 'title'" :content="page.content" />
-        <SectionPage
-          v-if="page.type == 'section'"
-          :content="page.content"
-          :spacers="page.spacers"
-          :bgImg="page.bgImg"
-          :bgPos="page.bgPos"
-        />
+      <div class="section">
+        <TitlePage :content="$t('title')" />
+      </div>
+      <div class="section">
+        <SectionPage :content="$t('section-1')" />
+      </div>
+      <div class="section">
+        <ContentPage />
+      </div>
+      <div class="section">
+        <QuestionPage questionId="q1" answerPage="section-1-3" />
+      </div>
+      <div class="section">
         <ContentPage
-          v-if="page.type == 'content'"
-          :contentTop="page.contentTop"
-          :contentBottom="page.contentBottom"
-          :boxSizes="page.boxSizes"
-          :questionId="page.questionId"
-          :isAnswerHidden="page.questionId && !recordedAnswers.hasOwnProperty(page.questionId)"
-        />
-        <QuestionPage
-          v-if="page.type == 'question'"
-          :questionId="page.questionId"
-          :question="page.question"
-          :answerChoices="page.answerChoices"
-          :answerPage="page.answerPage"
-          :boxSizes="page.boxSizes"
+          :boxSizes="[1, 3]"
+          :isAnswerHidden="!recordedAnswers.hasOwnProperty('q1')"
+          questionId="section-1-2"
         />
       </div>
+      <div class="section">
+        <SectionPage
+          :content="$t('section-2')"
+          :spacers="[1, 3]"
+          bgImg="img/bg/online-marketing-hIgeoQjS_iE-unsplash.jpg"
+          bgPos="right center"
+        />
+      </div>
+      <div class="section bg-purple-200">つづく</div>
     </full-page>
   </div>
 </template>
@@ -37,8 +41,6 @@ import SectionPage from '~/components/SectionPage.vue'
 import ContentPage from '~/components/ContentPage.vue'
 import QuestionPage from '~/components/QuestionPage.vue'
 
-import spec from '~/assets/spec.th.json'
-
 export default {
   components: {
     TitlePage,
@@ -48,11 +50,18 @@ export default {
   },
   data() {
     return {
-      spec: spec,
       recordedAnswers: {},
       fullPageOptions: {
         licenseKey: 'wobwH@p8',
-        anchors: spec.pages.map(page => page.name),
+        anchors: [
+          'home',
+          'section-1-0',
+          'section-1-1',
+          'section-1-2',
+          'section-1-3',
+          'section-2-0',
+          'tbc'
+        ],
         verticalCentered: true,
         controlArrows: true,
         scrollBar: true,

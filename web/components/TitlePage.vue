@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="wordcloud">
-      <h1 v-html="titleContent"></h1>
+      <h1 v-html="content"></h1>
     </div>
     <div class="images">
       <img src="~/assets/img/old-lady.png" />
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    titleContent: {
+    content: {
       type: String,
       default: '(title)'
     },

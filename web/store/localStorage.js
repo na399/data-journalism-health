@@ -8,6 +8,6 @@ export const getters = {
 
 export const mutations = {
   recordAnswer(state, payload) {
-    state.recordedAnswers[payload.idQ] = payload.idAns
+    state.recordedAnswers[payload.questionId] = payload.answerId
   }
 }

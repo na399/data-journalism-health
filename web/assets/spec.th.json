@@ -1,0 +1,66 @@
+{
+  "language": "th",
+  "pages": [
+    {
+      "type": "title",
+      "name": "home",
+      "content": "แค่ลืมเฉยๆ <br> หรือว่าป่วยกันแน่?"
+    },
+    {
+      "type": "section",
+      "name": "section-1",
+      "content": "สังคมประเทศไทย <br> เป็น <br> สังคมผู้สูงอายุ"
+    },
+    {
+      "type": "content",
+      "name": "section-1-1",
+      "contentTop": "เรามักได้ยินบ่อย ๆ ว่า ประเทศไทยได้เข้าสู่สังคมผู้สูงอายุ หรือ Aging Society เนื่องจากประเทศไทยมีผู้สูงอายุจำนวนมากขึ้นอย่างต่อเนื่อง จนสูงกว่า 12% ของประชากรทั้งหมด เมื่อปี พ.ศ. 2562",
+      "contentBottom": "(เว้นไว้ใส่กราฟ)"
+    },
+    {
+      "type": "question",
+      "name": "section-1-2",
+      "questionId": "section-1-2",
+      "answerPage": "section-1-3",
+      "question": "มาลองทายกันว่าตอนนี้ประเทศไทยมีผู้สูงอายุ ที่มีอายุตั้งแต่ 65 ปีขึ้นไป ประมาณกี่คน?",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "5 ล้าน 8 แสนคน",
+          "correct": false
+        },
+        {
+          "answerId": 2,
+          "text": "8 ล้าน 5 แสนคน",
+          "correct": true
+        },
+        {
+          "answerId": 3,
+          "text": "15 ล้าน 8 แสนคน",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-1-3",
+      "questionId": "section-1-2",
+      "contentTop": "ในปี พ.ศ. 2562 ประเทศไทย มีผู้สูงอายุประมาณ 8 ล้าน 5 แสนคน คิดเป็น 12.3 % ของประชากรทั้งหมด",
+      "contentBottom": "(เว้นไว้ใส่กราฟ)"
+    },
+    {
+      "type": "section",
+      "name": "section-2",
+      "content": "สุขภาพผู้สูงอายุ",
+      "spacers": [1, 3],
+      "bgImg": "img/bg/online-marketing-hIgeoQjS_iE-unsplash.jpg",
+      "bgPos": "right center"
+    },
+    {
+      "type": "content",
+      "name": "tbc",
+      "contentTop": "กำลังพัฒนาส่วนที่เหลือ",
+      "contentBottom": "อดใจรอนิดนึงนะครับ"
+    }
+  ]
+}

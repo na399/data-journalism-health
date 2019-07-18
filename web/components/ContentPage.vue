@@ -16,7 +16,7 @@
       <div class="overlay" v-if="isAnswerHidden">
         <span>{{ $t('q-not-ans') }}</span>
         <br />
-        <a :href="prevQid">
+        <a :href="`#${questionId}`">
           <button class="btn btn-teal">{{ $t('return-to-prev-q') }}</button>
         </a>
         <br />
@@ -45,9 +45,9 @@ export default {
       type: Boolean,
       default: false
     },
-    prevQid: {
+    questionId: {
       type: String,
-      default: '#home'
+      default: 'home'
     }
   },
   methods: {

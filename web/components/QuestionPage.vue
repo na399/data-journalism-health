@@ -1,17 +1,15 @@
-<i18n src="~/assets/messages.json"></i18n>
-
 <template>
   <div class="page">
     <canvas id="confetti" :class="{ 'active': !!answerClicked }" />
     <div class="top-box" :style="{'flex-grow': boxSizes[0]}" v-html="question"></div>
     <div class="bottom-box" :style="{'flex-grow': boxSizes[1]}">
-      <div v-for="choice in answerChoices" :key="choice.idAns" @click="checkAnswer(choice)">
+      <div v-for="choice in answerChoices" :key="choice.answerId" @click="checkAnswer(choice)">
         <button
           :class="[
             'btn',
             'btn-choice',
             { 'btn-correct': choice.correct && answerClicked },
-            { 'btn-incorrect': !choice.correct && answerClicked == choice.idAns },
+            { 'btn-incorrect': !choice.correct && answerClicked == choice.answerId },
             { 'cursor-not-allowed': !!answerClicked }
           ]"
         >{{ choice.text }}</button>
@@ -27,7 +25,7 @@ export default {
       type: Array,
       default: () => [2, 1]
     },
-    idQ: {
+    questionId: {
       type: String,
       default: 'q1'
     },
@@ -39,17 +37,17 @@ export default {
       type: Array,
       default: () => [
         {
-          idAns: 1,
+          answerId: 1,
           text: '(ans 1)',
           correct: true
         },
         {
-          idAns: 2,
+          answerId: 2,
           text: '(ans 2)',
           correct: false
         },
         {
-          idAns: 3,
+          answerId: 3,
           text: '(ans 3)',
           correct: false
         }
@@ -57,7 +55,7 @@ export default {
     },
     answerPage: {
       type: String,
-      default: '#home'
+      default: 'home'
     }
   },
   data() {
@@ -68,7 +66,7 @@ export default {
   },
   methods: {
     checkAnswer(choice) {
-      this.answerClicked = choice.idAns
+      this.answerClicked = choice.answerId
       this.isAnswerCorrect = choice.correct
 
       if (this.isAnswerCorrect) {
@@ -90,12 +88,12 @@ export default {
       }
 
       this.$store.commit('localStorage/recordAnswer', {
-        idQ: this.$props.idQ,
-        idAns: this.answerClicked
+        questionId: this.$props.questionId,
+        answerId: this.answerClicked
       })
 
       setTimeout(() => {
-        window.location.href = this.$props.answerPage
+        window.location.href = `#${this.$props.answerPage}`
       }, 3000)
     }
   }

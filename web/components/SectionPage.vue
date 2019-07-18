@@ -3,7 +3,7 @@
     <div class="bg" :style="{'background-image': `url(${bgImg})`, 'background-position': bgPos}">
       <div :style="{'flex-grow': spacers[0]}"></div>
       <div class="wordbox">
-        <h2 v-html="sectionContent"></h2>
+        <h2 v-html="content"></h2>
       </div>
       <div :style="{'flex-grow': spacers[1]}"></div>
     </div>
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    sectionContent: {
+    content: {
       type: String,
       default: '(section)'
     },
@@ -22,7 +22,7 @@ export default {
       default: () => [5, 1]
     },
     bgImg: {
-      default: require('~/assets/img/bg/cristian-newman-CeZypKDceQc-unsplash.jpg')
+      default: 'img/bg/cristian-newman-CeZypKDceQc-unsplash.jpg'
     },
     bgPos: {
       type: String,
