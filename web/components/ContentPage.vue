@@ -84,7 +84,7 @@ export default {
 }
 
 .bottom-no-box {
-  @apply w-full max-w-xl;
+  @apply w-full max-w-xl my-5;
 }
 
 .blurred {
