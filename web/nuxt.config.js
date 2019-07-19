@@ -38,7 +38,8 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-fullpage.js',
     'nuxt-i18n',
-    'nuxt-vuex-localstorage'
+    'nuxt-vuex-localstorage',
+    'nuxt-webfontloader'
     // 'nuxt-purgecss'
   ],
   i18n: {
@@ -56,6 +57,18 @@ export default {
     detectBrowserLanguage: false,
     vueI18nLoader: true
   },
+  webfontloader: {
+    custom: {
+        families: [
+            'Kanit:n7',
+            'Pridi:n4'
+        ],
+        urls: [
+            'https://fonts.googleapis.com/css?family=Kanit:700&display=swap',
+            'https://fonts.googleapis.com/css?family=Pridi:400&display=swap'
+        ]
+    }
+},
   // purgeCSS: {
   //   mode: 'postcss'
   // },

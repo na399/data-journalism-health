@@ -17,6 +17,7 @@
     "nuxt-fullpage.js": "^0.0.3",
     "nuxt-i18n": "^5.12.7",
     "nuxt-vuex-localstorage": "^1.2.6",
+    "nuxt-webfontloader": "^1.1.0",
     "vue-confetti": "^2.0.1"
   },
   "devDependencies": {
