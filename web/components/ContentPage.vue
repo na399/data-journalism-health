@@ -8,7 +8,14 @@
       v-html="contentTop"
     ></div>
     <div
+      v-if="isButtomBox"
       :class="['bottom-box', {'blurred': isAnswerHidden}]"
+      :style="{'flex-grow': boxSizes[1]}"
+      v-html="contentBottom"
+    ></div>
+    <div
+      v-if="!isButtomBox"
+      :class="['bottom-no-box', {'blurred': isAnswerHidden}]"
       :style="{'flex-grow': boxSizes[1]}"
       v-html="contentBottom"
     ></div>
@@ -41,6 +48,10 @@ export default {
       type: String,
       default: '<span>(contentBottom)</span>'
     },
+    isButtomBox: {
+      type: Boolean,
+      default: true
+    },
     isAnswerHidden: {
       type: Boolean,
       default: false
@@ -69,7 +80,11 @@ export default {
 
 .top-box,
 .bottom-box {
-  @apply w-5/6 max-w-xl rounded-lg shadow-md m-5 p-10 bg-purple-100;
+  @apply w-5/6 max-w-xl rounded-lg shadow-md m-5 p-5 bg-purple-100;
+}
+
+.bottom-no-box {
+  @apply w-full max-w-xl;
 }
 
 .blurred {

@@ -4,7 +4,7 @@
     {
       "type": "title",
       "name": "home",
-      "content": "แค่ลืมเฉยๆ <br> หรือว่าป่วยกันแน่?"
+      "content": "แค่ลืมเฉยๆ <br> หรือว่าป่วยกันแน่? <br> (อยู่ระหว่างพัฒนา WIP)"
     },
     {
       "type": "section",
@@ -15,7 +15,8 @@
       "type": "content",
       "name": "section-1-1",
       "contentTop": "เรามักได้ยินบ่อย ๆ ว่า ประเทศไทยได้เข้าสู่สังคมผู้สูงอายุ หรือ Aging Society เนื่องจากประเทศไทยมีผู้สูงอายุจำนวนมากขึ้นอย่างต่อเนื่อง จนสูงกว่า 12% ของประชากรทั้งหมด เมื่อปี พ.ศ. 2562",
-      "contentBottom": "(เว้นไว้ใส่กราฟ)"
+      "contentBottom": "<div class='flourish-embed w-full' data-src='visualisation/517036'>",
+      "isButtomBox": false
     },
     {
       "type": "question",

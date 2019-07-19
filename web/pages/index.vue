@@ -17,6 +17,7 @@
           :boxSizes="page.boxSizes"
           :questionId="page.questionId"
           :isAnswerHidden="page.questionId && !recordedAnswers.hasOwnProperty(page.questionId)"
+          :isButtomBox="page.isButtomBox"
         />
         <QuestionPage
           v-if="page.type == 'question'"
@@ -69,6 +70,13 @@ export default {
           break
       }
     })
+  },
+  head () {
+    return {
+      script: [
+        { src: 'https://public.flourish.studio/resources/embed.js' }
+      ]
+    }
   }
 }
 </script>
