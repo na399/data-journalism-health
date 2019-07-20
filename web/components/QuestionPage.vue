@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <canvas id="confetti" :class="{ 'active': !!answerClicked }" />
+    <canvas :id="`confetti-${questionId}`" :class="['confetti', { 'active': !!answerClicked }]" />
     <div class="top-box" :style="{'flex-grow': boxSizes[0]}" v-html="question"></div>
     <div class="bottom-box" :style="{'flex-grow': boxSizes[1]}">
       <div v-for="choice in answerChoices" :key="choice.answerId" @click="checkAnswer(choice)">
@@ -71,7 +71,7 @@ export default {
 
       if (this.isAnswerCorrect) {
         this.$confetti.start({
-          canvasId: 'confetti',
+          canvasId: `confetti-${this.questionId}`,
           particlesPerFrame: 1.5,
           defaultSize: 5,
           defaultDropRate: 5,
@@ -94,7 +94,7 @@ export default {
 
       setTimeout(() => {
         window.location.href = `#${this.$props.answerPage}`
-      }, 3000)
+      }, 2500)
     }
   }
 }
@@ -121,11 +121,11 @@ export default {
   @apply w-full flex-grow;
 }
 
-#confetti {
+.confetti {
   @apply w-full h-full absolute z-0;
 }
 
-#confetti.active {
+.confetti.active {
   @apply z-20;
 }
 
