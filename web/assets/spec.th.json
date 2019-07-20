@@ -47,13 +47,15 @@
       "name": "section-1-3",
       "questionId": "section-1-2",
       "contentTop": "ในปี พ.ศ. 2562 ประเทศไทย มีผู้สูงอายุประมาณ 8 ล้าน 5 แสนคน คิดเป็น 12.3 % ของประชากรทั้งหมด",
-      "contentBottom": "(ใส่กราฟ)"
+      "contentBottom": "<div class='flourish-embed w-full' data-src='visualisation/520318'></div>",
+      "isButtomBox": false
     },
     {
       "type": "content",
       "name": "section-1-4",
       "contentTop": "ในอีก 20 ปีข้างหน้า หรือ พ.ศ. 2582 จำนวนผู้สูงอายุจะเพิ่มขึ้นอีกเกินเท่าตัว เป็นประมาณ 17 ล้าน 3 แสนคน คิดเป็น 25.2 % ของประชากรทั้งหมด",
-      "contentBottom": "(ใส่กราฟ)"
+      "contentBottom": "<div class='flourish-embed w-full' data-src='visualisation/520321'></div>",
+      "isButtomBox": false
     },
     {
       "type": "content",
@@ -229,7 +231,8 @@
       "name": "section-4-3",
       "questionId": "section-4-2",
       "contentTop": "(Data โอกาสเป็นโรคในช่วงอายุและเพศต่างๆ)",
-      "contentBottom": "(ใส่กราฟ)"
+      "contentBottom": "<div class='flourish-embed w-full' data-src='visualisation/520321'>",
+      "isButtomBox": false
     },
     {
       "type": "section",
@@ -408,13 +411,15 @@
       "name": "section-8-4",
       "questionId": "section-8-3",
       "contentTop": "มีผู้ป่วยประมาณ 10% เท่านั้นที่ได้รับการวินิจฉัย<br />อีกกว่า 90% ยังไม่ได้รับการวินิจฉัยและรักษาจากแพทย์",
-      "contentBottom": "(ใส่กราฟ)"
+      "contentBottom": "<div class='flourish-embed  w-full' data-src='visualisation/520305'></div>",
+      "isButtomBox": false
     },
     {
       "type": "content",
       "name": "section-8-5",
       "contentTop": "ปัจจุบันประเทศไทยมีผู้ป่วยประมาณ 600,000 คน <br />และอาจมี 540,000 คน ไม่ได้รับการวินิจฉัยและการรักษา",
-      "contentBottom": "(ใส่กราฟ)"
+      "contentBottom": "<div class='flourish-embed  w-full' data-src='visualisation/520308'></div>",
+      "isButtomBox": false
     },
     {
       "type": "content",
