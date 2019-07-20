@@ -16,7 +16,7 @@
           :contentBottom="page.contentBottom"
           :boxSizes="page.boxSizes"
           :questionId="page.questionId"
-          :isAnswerHidden="page.questionId && !recordedAnswers.hasOwnProperty(page.questionId)"
+          :isAnswerHidden="hiddenAnswers.includes(page.questionId)"
           :isButtomBox="page.isButtomBox"
         />
         <QuestionPage
@@ -51,6 +51,7 @@ export default {
     return {
       spec: spec,
       recordedAnswers: {},
+      hiddenAnswers: spec.pages.map(page => page.questionId).filter(Boolean),
       fullPageOptions: {
         licenseKey: 'wobwH@p8',
         anchors: spec.pages.map(page => page.name),
@@ -67,15 +68,16 @@ export default {
       switch (mutation.type) {
         case 'localStorage/recordAnswer':
           this.recordedAnswers = state.localStorage.recordedAnswers
+          this.hiddenAnswers = this.hiddenAnswers.filter(
+            item => !Object.keys(this.recordedAnswers).includes(item)
+          )
           break
       }
     })
   },
-  head () {
+  head() {
     return {
-      script: [
-        { src: 'https://public.flourish.studio/resources/embed.js' }
-      ]
+      script: [{ src: 'https://public.flourish.studio/resources/embed.js' }]
     }
   }
 }
