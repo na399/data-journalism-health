@@ -4,12 +4,12 @@
     {
       "type": "title",
       "name": "home",
-      "content": "แค่ลืมเฉยๆ <br> หรือว่าป่วยกันแน่? <br> (อยู่ระหว่างพัฒนา WIP)"
+      "content": "แค่ลืมเฉยๆ <br /> หรือว่าป่วยกันแน่? <br /> (อยู่ระหว่างพัฒนา WIP)"
     },
     {
       "type": "section",
       "name": "section-1",
-      "content": "สังคมประเทศไทย <br> เป็น <br> สังคมผู้สูงอายุ"
+      "content": "สังคมประเทศไทย <br /> เป็น <br /> สังคมผู้สูงอายุ"
     },
     {
       "type": "content",
@@ -47,7 +47,19 @@
       "name": "section-1-3",
       "questionId": "section-1-2",
       "contentTop": "ในปี พ.ศ. 2562 ประเทศไทย มีผู้สูงอายุประมาณ 8 ล้าน 5 แสนคน คิดเป็น 12.3 % ของประชากรทั้งหมด",
-      "contentBottom": "(เว้นไว้ใส่กราฟ)"
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "content",
+      "name": "section-1-4",
+      "contentTop": "ในอีก 20 ปีข้างหน้า หรือ พ.ศ. 2582 จำนวนผู้สูงอายุจะเพิ่มขึ้นอีกเกินเท่าตัว เป็นประมาณ 17 ล้าน 3 แสนคน คิดเป็น 25.2 % ของประชากรทั้งหมด",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "content",
+      "name": "section-1-5",
+      "contentTop": "(ความเห็นจากแพทย์)",
+      "contentBottom": "(ใส่ภาพ)"
     },
     {
       "type": "section",
@@ -56,6 +68,371 @@
       "spacers": [1, 3],
       "bgImg": "img/bg/online-marketing-hIgeoQjS_iE-unsplash.jpg",
       "bgPos": "right center"
+    },
+    {
+      "type": "content",
+      "name": "section-2-1",
+      "contentTop": "เมื่ออายุมากขึ้น ผู้สูงอายุต้องพบเจอกับปัญหาทางสุขภาพมากขึ้น มีหลายโรคที่ทำให้ผู้สูงอายุไม่สามารถใช้ชีวิตได้อย่างมีความสุขอย่างที่เคย สาเหตุหนึ่ง คือ โรคอัลไซเมอร์ ที่ทำให้สูญเสียความจำ และความสามารถต่าง ๆ ไป"      ,
+      "contentBottom": "(ใส่ word cloud โรคต่างๆ)"
+    },
+    {
+      "type": "question",
+      "name": "section-2-2",
+      "questionId": "section-2-2",
+      "answerPage": "section-2-3",
+      "question": "ลองทายดูว่า โรคอัลไซเมอร์ เป็นสาเหตุของการเสียชีวิต อันดับที่เท่าไหร่ในผู้สูงอายุไทย <br /> <small>หมายเหตุ: โรคมะเร็งแยกตามอวัยวะ</small>",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "อันดับ 1",
+          "correct": true
+        },
+        {
+          "answerId": 2,
+          "text": "อันดับ 3",
+          "correct": false
+        },
+        {
+          "answerId": 3,
+          "text": "อันดับ 5",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-2-3",
+      "questionId": "section-2-2",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "section",
+      "name": "section-3",
+      "content": "อัลไซเมอร์<br />และ<br />สมองเสื่อม",
+      "spacers": [1, 3],
+      "bgImg": "",
+      "bgPos": ""
+    },
+    {
+      "type": "question",
+      "name": "section-3-1",
+      "questionId": "section-3-1",
+      "answerPage": "section-3-2",
+      "question": "คุณอาจจะเคยได้ยินทั้งคำว่า<br />อัลไซเมอร์ และ สมองเสื่อม<br />สงสัยหรือไม่ว่า 2 คำนี้ ใช้แทนกันได้หรือไม่นะ?",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "เหมือนกัน ใช้แทนกันได้",
+          "correct": false
+        },
+        {
+          "answerId": 2,
+          "text": "ต่างกัน ใช้แทนกันไม่ได้",
+          "correct": true
+        },
+        {
+          "answerId": 3,
+          "text": "ไม่ทราบ",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-3-2",
+      "questionId": "section-3-1",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่ภาพ)"
+    },
+    {
+      "type": "question",
+      "name": "section-3-3",
+      "questionId": "section-3-3",
+      "answerPage": "section-3-4",
+      "question": "อาการใดต่อไปนี้ เป็นอาการของภาวะสมองเสื่อม<br />(ถูกมากกว่า 1 ข้อ)",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "มีปัญหาในด้านทิศทาง",
+          "correct": true
+        },
+        {
+          "answerId": 2,
+          "text": "มีความผิดปกติในการทำงานที่ซับซ้อน",
+          "correct": true
+        },
+        {
+          "answerId": 3,
+          "text": "มีความผิดปกติทางอารมณ์",
+          "correct": true
+        },
+        {
+          "answerId": 4,
+          "text": "มีปัญหาด้านการใช้ภาษา",
+          "correct": true
+        },
+        {
+          "answerId": 5,
+          "text": "ความจำระยะสั้นไม่ดี",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-3-4",
+      "questionId": "section-3-3",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่ภาพ)"
+    },
+    {
+      "type": "section",
+      "name": "section-4",
+      "content": "สมองเสื่อม<br />ในผู้สูงอายุ",
+      "spacers": [1, 3],
+      "bgImg": "",
+      "bgPos": ""
+    },
+    {
+      "type": "content",
+      "name": "section-4-1",
+      "contentTop": "เมื่ออายุมากขึ้น ผู้สูงอายุก็มีความเสี่ยงมีภาวะสมองเสื่อมเพิ่มมากขึ้น เนื่องมาจากการสะสมความผิดปกติในสมอง และระบบซ่อมแซมที่มีประสิทธิภาพลดลง<br /><br />ในผู้มีภาวะสมองเสื่อม ความเสื่อมสภาพของสมองจะเพิ่มความรุนแรงขึ้นเรื่อย ๆ",
+      "contentBottom": "(ใส่ภาพ)"
+    },
+    {
+      "type": "question",
+      "name": "section-4-2",
+      "questionId": "section-4-2",
+      "answerPage": "section-4-3",
+      "question": "ลองทายดูว่า ในคุณตาอายุ 85 - 90 ปี 100 คน จะมีคุณตาประมาณกี่คนที่มีภาวะสมองเสื่อม?",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "5 คน",
+          "correct": false
+        },
+        {
+          "answerId": 2,
+          "text": "10 คน",
+          "correct": false
+        },
+        {
+          "answerId": 3,
+          "text": "15 คน",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-4-3",
+      "questionId": "section-4-2",
+      "contentTop": "(Data โอกาสเป็นโรคในช่วงอายุและเพศต่างๆ)",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "section",
+      "name": "section-5",
+      "content": "ปัจจัยเสี่ยง<br />ภาวะสมองเสื่อม",
+      "spacers": [1, 3],
+      "bgImg": "",
+      "bgPos": ""
+    },
+    {
+      "type": "question",
+      "name": "section-5-1",
+      "questionId": "section-5-1",
+      "answerPage": "section-5-2",
+      "question": "การสูบบุหรี่ เพิ่มความเสี่ยงภาวะสมองเสื่อมหรือไม่",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "เพิ่ม ไม่ควรสูบ",
+          "correct": true
+        },
+        {
+          "answerId": 2,
+          "text": "ไม่เพิ่ม สูบได้ไม่ส่งผล",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-5-2",
+      "questionId": "section-5-1",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "question",
+      "name": "section-5-3",
+      "questionId": "section-5-3",
+      "answerPage": "section-5-4",
+      "question": "นอนหลับ พักผ่อนน้อย เพิ่มความเสี่ยงภาวะสมองเสื่อมหรือไม่",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "เพิ่ม",
+          "correct": true
+        },
+        {
+          "answerId": 2,
+          "text": "ไม่เพิ่ม",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-5-4",
+      "questionId": "section-5-3",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "question",
+      "name": "section-5-5",
+      "questionId": "section-5-5",
+      "answerPage": "section-5-6",
+      "question": "(...ปัจจัยอื่นๆอีก รวมประมาณ 5 อย่าง...) เพิ่มความเสี่ยงภาวะสมองเสื่อมหรือไม่",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "เพิ่ม",
+          "correct": true
+        },
+        {
+          "answerId": 2,
+          "text": "ไม่เพิ่ม",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-5-6",
+      "questionId": "section-5-5",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "section",
+      "name": "section-6",
+      "content": "การป้องกัน<br />ภาวะสมองเสื่อม<br />(คำถาม format เดียวกับ section ที่แล้ว)",
+      "spacers": [1, 3],
+      "bgImg": "",
+      "bgPos": ""
+    },
+    {
+      "type": "section",
+      "name": "section-7",
+      "content": "การรักษา<br />ภาวะสมองเสื่อม",
+      "spacers": [1, 3],
+      "bgImg": "",
+      "bgPos": ""
+    },
+    {
+      "type": "question",
+      "name": "section-7-1",
+      "questionId": "section-7-1",
+      "answerPage": "section-7-2",
+      "question": "ภาวะสมองเสื่อม สามารถรักษาให้หายขาดได้",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "รักษาได้",
+          "correct": false
+        },
+        {
+          "answerId": 2,
+          "text": "รักษาไม่ได้",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-7-2",
+      "questionId": "section-7-1",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "section",
+      "name": "section-8",
+      "content": "หากสงสัยว่า<br />มีอาการ",
+      "spacers": [1, 3],
+      "bgImg": "",
+      "bgPos": ""
+    },
+    {
+      "type": "content",
+      "name": "section-8-1",
+      "contentTop": "(คำอธิบายจากแพทย์)",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "content",
+      "name": "section-8-2",
+      "contentTop": "ค้นหาแพทย์ผู้เชี่ยวชาญ<br />ใกล้ตัวท่าน",
+      "contentBottom": "(ใส่แผนที่)"
+    },
+    {
+      "type": "question",
+      "name": "section-8-3",
+      "questionId": "section-8-3",
+      "answerPage": "section-8-4",
+      "question": "ในประเทศไทย มีผู้ป่วยภาวะสมองเสื่อม ได้รับการวินัจฉัยโดยแพทย์ ประมาณเท่าใดของผู้ป่วยทั้งหมด",
+      "answerChoices": [
+        {
+          "answerId": 1,
+          "text": "10%",
+          "correct": true
+        },
+        {
+          "answerId": 2,
+          "text": "50%",
+          "correct": false
+        },
+        {
+          "answerId": 3,
+          "text": "90%",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "section-8-4",
+      "questionId": "section-8-3",
+      "contentTop": "มีผู้ป่วยประมาณ 10% เท่านั้นที่ได้รับการวินิจฉัย<br />อีกกว่า 90% ยังไม่ได้รับการวินิจฉัยและรักษาจากแพทย์",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "content",
+      "name": "section-8-5",
+      "contentTop": "ปัจจุบันประเทศไทยมีผู้ป่วยประมาณ 600,000 คน <br />และอาจมี 540,000 คน ไม่ได้รับการวินิจฉัยและการรักษา",
+      "contentBottom": "(ใส่กราฟ)"
+    },
+    {
+      "type": "content",
+      "name": "section-8-6",
+      "contentTop": "(คำแนะนำจากแพทย์)",
+      "contentBottom": "ยิ่งได้รับการวินิจฉัยเร็ว ยิ่งดี"
+    },
+    {
+      "type": "content",
+      "name": "section-end-1",
+      "contentTop": "หาข้อมูลเพิ่มเติมได้ที่<br />………….<br />………….<br />………….",
+      "contentBottom": "หรือติดต่อ<br />………….<br />………….<br />…………."
+    },
+    {
+      "type": "content",
+      "name": "section-end-2",
+      "contentTop": "ขอขอบคุณ<br />………….<br />………….<br />………….",
+      "contentBottom": "จัดทำโดย<br />………….<br />………….<br />…………."
     },
     {
       "type": "content",
